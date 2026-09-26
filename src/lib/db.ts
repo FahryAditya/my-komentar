@@ -228,6 +228,9 @@ export async function deleteComment(id: string): Promise<boolean> {
 
 export async function getAdminSettings(): Promise<AdminSettings> {
   await ensureDbInitialized();
+  if (process.env.ADMIN_PIN) {
+    return { adminPin: process.env.ADMIN_PIN.trim(), updatedAt: new Date().toISOString() };
+  }
   try {
     const res = await pool.query("SELECT value, updated_at FROM settings WHERE key = 'admin_pin'");
     if (res.rows.length > 0) {

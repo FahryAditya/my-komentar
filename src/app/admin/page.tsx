@@ -368,8 +368,9 @@ export default function AdminDashboardPage() {
                     {showPin ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
                 </div>
-                <p className="mt-2 text-[11px] text-slate-500">
-                  Default PIN awal: <code className="text-indigo-300 bg-slate-800/80 px-1.5 py-0.5 rounded">admin123</code> (dapat diubah setelah login).
+                <p className="mt-2 text-[11px] text-slate-500 flex items-center gap-1">
+                  <ShieldCheck className="w-3.5 h-3.5 text-indigo-400 inline" />
+                  Area terenkripsi. Hanya admin yang memiliki hak akses.
                 </p>
               </div>
 
